@@ -87,6 +87,9 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!--recycler view for displaying all notes-->
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
