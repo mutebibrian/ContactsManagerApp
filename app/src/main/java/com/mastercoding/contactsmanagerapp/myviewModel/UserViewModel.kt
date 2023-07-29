@@ -12,7 +12,8 @@ import kotlinx.coroutines.launch
 
 class UserViewModel(private val repository: UserRepository) : ViewModel(),Observable {
 
-
+// on below line we are creating a variable
+    // for our all users list and repository
 
 
     val users = repository.users
@@ -69,6 +70,8 @@ class UserViewModel(private val repository: UserRepository) : ViewModel(),Observ
 
 
     }
+    // on below line we are creating a new method for adding a new user to our database
+    // we are calling a method from our repository to add a new user.
 
     fun insert(user: User) = viewModelScope.launch {
         repository.insert(user)
@@ -77,6 +80,9 @@ class UserViewModel(private val repository: UserRepository) : ViewModel(),Observ
     fun clearAll()= viewModelScope.launch {
         repository.deleteAll()
     }
+
+    // on below line we are creating a new method for updating a userinfo. In this we are
+    // calling a update method from our repository to  our user.
 
     fun update(user: User) = viewModelScope.launch {
         repository.update(user)
@@ -91,6 +97,8 @@ class UserViewModel(private val repository: UserRepository) : ViewModel(),Observ
 
 
     }
+    // on below line we are creating a new method for deleting a user info. In this we are
+    // calling a delete method from our repository to delete our user.
 
     fun delete(user: User) = viewModelScope.launch {
         repository.delete(user)
