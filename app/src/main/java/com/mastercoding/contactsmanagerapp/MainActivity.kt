@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
         val repository = UserRepository(dao)
         val factory = UserViewModelFactory(repository)
 
-
+// on below line we are
+        // initializing our user view modal.
         userViewModel = ViewModelProvider(this,
                 factory).get(UserViewModel::class.java)
 
