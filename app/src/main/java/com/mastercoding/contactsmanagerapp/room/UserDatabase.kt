@@ -12,10 +12,17 @@ abstract class UserDatabase : RoomDatabase(){
     abstract val userDAO: UserDAO
 
     // Singleton Design Pattern
+    
     companion object{
+        // Singleton prevents multiple
+        // instances of database opening at the same time.
         @Volatile
         private var INSTANCE: UserDatabase ?= null
             fun getInstance(context: Context): UserDatabase{
+                
+                // if the INSTANCE is not null, then return it,
+            // if it is, then create the database
+                
                 synchronized(this){
                     var instance = INSTANCE
                     if (instance == null){
@@ -28,6 +35,8 @@ abstract class UserDatabase : RoomDatabase(){
                             .build()
                     }
                     INSTANCE = instance
+                // return instance
+
                     return instance
                 }
             }
